@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <name>my_jackal_control</name>
+  <version>0.0.0</version>
+  <description>Launch the control parts of a Jackal</description>
+  <maintainer email="nicholas.sullivan@adelaide.edu.au">Nick Sullivan</maintainer>
+  <author email="nicholas.sullivan@adelaide.edu.au">Nick Sullivan</author>
+  <license>CCBY</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>roslaunch</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>interactive_marker_twist_server</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>hector_gazebo_plugins</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>diff_drive_controller</run_depend>
+
+  <export>
+  </export>
+</package>

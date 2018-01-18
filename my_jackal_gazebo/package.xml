@@ -1,0 +1,13 @@
+<package>
+  <name>my_jackal_gazebo</name>
+  <version>0.4.2</version>
+  <description>Jackal simulation for Gazebo</description>
+  <author>Nick Sullivan</author>
+  <maintainer email="nicholas.sullivan@adelaide.edu.au">Nick Sullivan</maintainer>
+  <license>BSD</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>my_jackal_base</run_depend>
+</package>

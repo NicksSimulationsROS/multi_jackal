@@ -24,7 +24,7 @@
   </include>
   <include file="$(find my_jackal_base)/launch/jackal_base.launch">
     <arg name="ns" value="jackal1"/>
-    <arg name="x" value="2"/>
+    <arg name="x" value="1"/>
     <arg name="tagged" value="$(arg tagged)"/>
     <arg name="tag_num" value="1"/>
     <arg name="use_move_base" value="true"/>

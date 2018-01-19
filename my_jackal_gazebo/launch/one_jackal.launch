@@ -10,7 +10,7 @@
     <arg name="use_sim_time" value="true"/>
     <arg name="debug" value="false"/>
     <arg name="gui" value="false"/>
-	  <arg name="headless" value="true"/>				<!-- If true, Gazebo won't render anything. Increases speed but cameras won't work. -->
+	<arg name="headless" value="true"/>				<!-- If true, Gazebo won't render anything. Increases speed but cameras won't work. -->
     <arg name="world_name" value="$(find my_jackal_gazebo)/worlds/empty.world"/>
   </include>
   

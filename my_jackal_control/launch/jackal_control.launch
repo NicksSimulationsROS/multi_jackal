@@ -20,7 +20,6 @@
 	<node name="controller_spawner" pkg="controller_manager" type="spawner"
 			args="jackal_joint_publisher jackal_velocity_controller" ns="$(arg ns)">
 		<param name="frame_id" value="my_frame"/>
-		
 	</node>
         
 	<!-- Create a control marker for manual control using RVIZ. -->

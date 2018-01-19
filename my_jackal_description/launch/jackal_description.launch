@@ -17,7 +17,7 @@
          command="$(find my_jackal_description)/scripts/env_run
                   $(find my_jackal_description)/urdf/configs/$(arg config)
                   $(find xacro)/xacro '$(find my_jackal_description)/urdf/jackal.urdf.xacro' 
-                      'namespace:=$(arg ns)' 'tagged:=$(arg tagged)' 'tag_num:=$(arg tag_num)'" />
+                      '--inorder' 'namespace:=$(arg ns)' 'tagged:=$(arg tagged)' 'tag_num:=$(arg tag_num)'" />
 
 	<!-- Publish the robot joints. -->
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg ns)">

@@ -3,8 +3,8 @@
   <name>my_jackal_description</name>
   <version>0.0.0</version>
   <description>Launch Jackal states and get the model</description>
-  <maintainer email="nicholas.sullivan@adelaide.edu.au">Nick Sullivan</maintainer>
-  <author email="nicholas.sullivan@adelaide.edu.au">Nick Sullivan</author>
+  <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
+  <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>
   <license>CCBY</license>
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roslaunch</build_depend>

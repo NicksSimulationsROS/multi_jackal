@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Written by Nick Sullivan, the University of Adelaide, 2016. -->
+
 <!-- This file publishes the robot joint states, and sets the robot description
      parameter for creating it in gazebo. -->
 

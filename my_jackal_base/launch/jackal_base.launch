@@ -1,36 +1,36 @@
 <?xml version="1.0"?>
-<!-- Written by Nick Sullivan, the University of Adelaide, 2016. -->
+
 <!-- This is generates a Jackal in gazebo. It must have a unique namespace in 
-     order to generate multiple Creates. The default position can be specified. -->
+     order to generate multiple Jackals. The default position can be specified. -->
      
 <launch>
   <!-- Arguments to set the namespace, start position. -->
-	<arg name="ns" default="jackal0"/>			<!-- Must be unique for each robot. -->
-	<arg name="x" default="0"/>
-	<arg name="y" default="0"/>
-	<arg name="z" default="0"/>
-	<arg name="roll"  default="0"/>
-	<arg name="pitch" default="0"/>
-	<arg name="yaw"   default="0"/>
-	<arg name="config" default="base" /> 		<!-- base or front_laser. more options in description/urdf/configs-->
-	<arg name="use_move_base" default="false"/> <!-- Allows navigation to a location. -->
+	<arg name="ns"     default="jackal0"/>			<!-- Must be unique for each robot. -->
+	<arg name="x"      default="0"/>
+	<arg name="y"      default="0"/>
+	<arg name="z"      default="0"/>
+	<arg name="roll"   default="0"/>
+	<arg name="pitch"  default="0"/>
+	<arg name="yaw"    default="0"/>
+	<arg name="config" default="base" /> 		<!-- options in description/urdf/configs-->
+	<arg name="use_move_base"  default="false"/> <!-- Allows navigation to a location. -->
 	<arg name="use_global_tf"  default="true"/>
   <arg name="use_global_ekf" default="false"/> <!-- Uses GPS instead of a static 0,0,0 TF -->
-	<arg name="tagged" default="false"/> <!-- Tagging is not available right now. Later, it will lay a template on each jackal. -->
+	<arg name="tagged"  default="false"/> 
 	<arg name="tag_num" default="0"/> 
 	
-	<!-- Launch the control portion of the Create robot. -->
+	<!-- Launch the control portion of the Jackal robot. -->
 	<include file="$(find my_jackal_control)/launch/jackal_control.launch">
-    	<arg name="ns" value="$(arg ns)"/>
-	</include>
+    <arg name="ns" value="$(arg ns)"/>
+  </include>
 
-  	<!-- Generate the model for gazebo and publish the robots joint states. -->
+  <!-- Generate the model for gazebo and publish the robots joint states. -->
 	<include file="$(find my_jackal_description)/launch/jackal_description.launch">
-		<arg name="ns" value="$(arg ns)"/>
-		<arg name="config" value="$(arg config)"/>
-		<arg name="tagged" value="$(arg tagged)"/>
-		<arg name="tag_num" value="$(arg tag_num)"/>
-	</include>
+    <arg name="ns" value="$(arg ns)"/>
+    <arg name="config" value="$(arg config)"/>
+    <arg name="tagged" value="$(arg tagged)"/>
+    <arg name="tag_num" value="$(arg tag_num)"/>
+  </include>
 
 	<!-- Start the jackal navigation. -->
 	<include file="$(find my_jackal_nav)/launch/jackal_nav.launch">

@@ -4,6 +4,7 @@
       
      To view RVIZ from the robots point of view, set 
        ROS_MASTER_URI=http://localhost:11312
+       roslaunch my_jackal_gazebo rviz.launch
      Then launch RVIZ as normal.
 -->
 

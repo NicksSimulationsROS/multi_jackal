@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Written by Nick Sullivan, the University of Adelaide, 2016. -->
+
 <!-- This file launches the Jackal robot controller spawner, which plugs into
      gazebo to allow the Jackal to be controlled. -->
      

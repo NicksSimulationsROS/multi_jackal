@@ -10,13 +10,13 @@
     <arg name="use_sim_time" value="true"/>
     <arg name="debug" value="false"/>
     <arg name="gui" value="false"/>
-	<arg name="headless" value="true"/>				<!-- If true, Gazebo won't render anything. Increases speed but cameras won't work. -->
+	  <arg name="headless" value="true"/>				<!-- If true, Gazebo won't render anything. Increases speed but cameras won't work. -->
     <arg name="world_name" value="$(find my_jackal_gazebo)/worlds/empty.world"/>
   </include>
   
   <!-- Spawn the robot. -->
   <include file="$(find my_jackal_base)/launch/jackal_base.launch">
-	<arg name="ns" value="jackal0"/>
+	  <arg name="ns" value="jackal0"/>
     <arg name="tagged" value="$(arg tagged)"/>
     <arg name="tag_num" value="0"/>
 	<arg name="use_move_base" value="true"/>

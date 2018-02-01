@@ -25,6 +25,7 @@ look at the topics and TF tree.
 ## my_jackal_gazebo
 The starting point for simulating the robots. Contains launch and config files.
 Starts up a Gazebo session and launches robots using `my_jackal_base`.
+Example: `roslaunch my_jackal_gazebo one_jackal.launch`.
 
 ## my_jackal_base
 Contains a single launch file that calls all other jackal components.
@@ -47,3 +48,8 @@ Make sure the file `my_jackal_description/scripts/env_run` is executable.
 
 Example launch files can be found in `my_jackal_gazebo/launch`. Gazebo and RVIZ 
 can be viewed with `gzclient` and `roslaunch my_jackal_gazebo rviz.launch`.
+
+# TODO
+When using an EKF instead of a TF for map to base_link, a warning is displayed
+`Transform from jackal0/base_link to map was unavailable for the time requested.
+Using latest instead.`

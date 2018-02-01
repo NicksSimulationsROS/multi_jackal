@@ -17,7 +17,7 @@
 
   <!-- Robot localisation, takes IMU and wheel odometry to form a single localisation
 		 estimate. -->
-	<node pkg="my_robot_localization" type="ekf_localization_node" name="local_ekf_localization" ns="$(arg ns)">
+	<node pkg="robot_localization" type="ekf_localization_node" name="local_ekf_localization" ns="$(arg ns)">
 		<!-- Set frame links -->
 		<param name="map_frame"       value="map"/>
 		<param name="odom_frame"      value="$(arg ns)/odom"/>
@@ -59,14 +59,14 @@
   </group>
   <!-- Provide a global position estimate by fusing GPS signal with local odometry. -->
   <group if="$(arg use_global_ekf)">
-    <node ns="$(arg ns)" pkg="my_robot_localization" type="navsat_transform_node" name="navsat_transform_node" output="screen">
+    <node ns="$(arg ns)" pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" output="screen">
       <param name="delay"             value="3.0"/>
       <param name="yaw_offset"        value="1.5707963"/>
       <remap from="imu/data"          to="imu/data"/>
       <remap from="odometry/filtered" to="odometry/global_filtered"/>
       <remap from="gps/fix"           to="navsat/fix"/>
     </node>
-    <node pkg="my_robot_localization" type="ekf_localization_node" name="global_ekf_localization" ns="$(arg ns)">
+    <node pkg="robot_localization" type="ekf_localization_node" name="global_ekf_localization" ns="$(arg ns)">
 		  <rosparam param="initial_state" subst_value="true">
          [   $(arg x),     $(arg y),   $(arg z),
           $(arg roll), $(arg pitch), $(arg yaw),

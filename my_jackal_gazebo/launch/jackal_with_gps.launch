@@ -20,7 +20,7 @@
 	  <arg name="ns"             value="jackal0"/>
     <arg name="tagged"         value="$(arg tagged)"/>
     <arg name="tag_num"        value="0"/>
-	  <arg name="use_move_base"  value="false"/>
+	  <arg name="use_move_base"  value="true"/>
 	  <arg name="use_global_ekf" value="true"/>
 	  <arg name="use_global_tf"  value="false"/>
   </include>

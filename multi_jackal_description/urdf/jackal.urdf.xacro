@@ -199,9 +199,9 @@
        of these into the final description is controlled by optenv variables, which
        default each one to off.-->
   <xacro:include filename="accessories.urdf.xacro" />
-  <!-- Adding DSTG model. -->
+  <!-- Adding additional cameras. -->
   <xacro:unless value="$(arg tagged)">
-    <xacro:include filename="dsto02_jackal_extras.urdf.xacro"/>
+    <xacro:include filename="jackal_extras.urdf.xacro"/>
   </xacro:unless>
   
   <!-- Optional custom includes. -->

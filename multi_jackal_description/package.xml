@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>multi_jackal_description</name>
+  <version>0.0.0</version>
+  <description>Launch Jackal states and get the model</description>
+  <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
+  <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>
+  <license>CCBY</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <run_depend>gazebo_ros</run_depend>
+  <run_depend>jackal_description</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>urdf</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>lms1xx</run_depend>
+  <run_depend>pointgrey_camera_description</run_depend>
+  <export>
+  </export>
+</package>

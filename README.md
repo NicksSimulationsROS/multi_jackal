@@ -16,7 +16,7 @@ as clearly separated from the versions that don't play well with ROS. This means
 that some capabilities appear that they should work in ROS, but don't.
 
 As for the Jackal, if you only want to simulate one, then follow the 
-[guide]((https://www.clearpathrobotics.com/assets/guides/jackal/simulation.html). 
+[guide](https://www.clearpathrobotics.com/assets/guides/jackal/simulation.html). 
 The problem is that it isn't scalable. They use the same transformation tree and 
 some message names. You can see the problem yourself if you spawn two and have a 
 look at the topics and TF tree.

@@ -22,32 +22,29 @@ some message names. You can see the problem yourself if you spawn two and have a
 look at the topics and TF tree.
 
 # Files
-## my_jackal_gazebo
+## multi_jackal_gazebo
 The starting point for simulating the robots. Contains launch and config files.
-Starts up a Gazebo session and launches robots using `my_jackal_base`.
-Example: `roslaunch my_jackal_gazebo one_jackal.launch`.
+Starts up a Gazebo session and launches robots using `multi_jackal_base`.
+Example: `roslaunch multi_jackal_gazebo one_jackal.launch`.
 
-## my_jackal_base
+## multi_jackal_base
 Contains a single launch file that calls all other jackal components.
 
-## my_jackal_control
+## multi_jackal_control
 Launches the velocity controller plugin and robot controls.
 
-## my_jackal_description
+## multi_jackal_description
 Creates a plugin for publishing robot states and transformations. Loads a 
 parameter that describes the robot for use in Gazebo.
 
-## my_jackal_nav
-Creates the localisation and move_base nodes. This is set up to use the custom
-[my_robot_localization](https://github.com/Nick-Sullivan/my_robot_localization), 
-but can easily be changed to use the standard [robot_localization](http://wiki.ros.org/robot_localization) 
-by altering the launch file. 
+## multi_jackal_nav
+Creates the localisation and move_base nodes.
 
 # Running
-Make sure the file `my_jackal_description/scripts/env_run` is executable.
+Make sure the file `multi_jackal_description/scripts/env_run` is executable.
 
-Example launch files can be found in `my_jackal_gazebo/launch`. Gazebo and RVIZ 
-can be viewed with `gzclient` and `roslaunch my_jackal_gazebo rviz.launch`.
+Example launch files can be found in `multi_jackal_gazebo/launch`. Gazebo and RVIZ 
+can be viewed with `gzclient` and `roslaunch multi_jackal_gazebo rviz.launch`.
 
 # TODO
 When using an EKF instead of a TF for map to base_link, a warning is displayed

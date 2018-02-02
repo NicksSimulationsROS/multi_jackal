@@ -8,14 +8,7 @@ is that multiple Jackals are able to be spawned without causing overlap.
 Significant amounts of code are from Clearpaths Jackal package, this just has 
 minor changes.
 
-# Gazebo notes
-ROS uses an older version of Gazebo. At some point Gazebo wanted to move to 
-newer standards and types, and ROS didn't want to (or wasn't able to) keep up. 
-Gazebo still has a few bits and pieces of ROS tutorials and such, but it isn't 
-as clearly separated from the versions that don't play well with ROS. This means 
-that some capabilities appear that they should work in ROS, but don't.
-
-As for the Jackal, if you only want to simulate one, then follow the 
+If you only want to simulate one, then follow the 
 [guide](https://www.clearpathrobotics.com/assets/guides/jackal/simulation.html). 
 The problem is that it isn't scalable. They use the same transformation tree and 
 some message names. You can see the problem yourself if you spawn two and have a 

@@ -11,18 +11,18 @@
     <arg name="use_sim_time" value="true"/>
     <arg name="debug"        value="false"/>
     <arg name="gui"          value="false"/>
-	  <arg name="headless"     value="true"/>		
+    <arg name="headless"     value="true"/>		
     <arg name="world_name"   value="$(find multi_jackal_gazebo)/worlds/empty.world"/>
   </include>
   
   <!-- Spawn the robot. -->
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
-	  <arg name="ns"             value="jackal0"/>
+    <arg name="ns"             value="jackal0"/>
     <arg name="tagged"         value="$(arg tagged)"/>
     <arg name="tag_num"        value="0"/>
-	  <arg name="use_move_base"  value="true"/>
-	  <arg name="use_global_ekf" value="true"/>
-	  <arg name="use_global_tf"  value="false"/>
+    <arg name="use_move_base"  value="true"/>
+    <arg name="use_global_ekf" value="true"/>
+    <arg name="use_global_tf"  value="false"/>
   </include>
 
 </launch>

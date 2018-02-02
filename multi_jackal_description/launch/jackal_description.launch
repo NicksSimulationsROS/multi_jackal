@@ -4,25 +4,25 @@
      parameter for creating it in gazebo. -->
 
 <launch>
-	<!-- Namespace must be unique. -->
-	<arg name="ns" default="jackal"/>
-	<arg name="config" default="base" />
-	<arg name="tagged" default="false"/>
-	<arg name="tag_num" default="0"/>
-	
-	<!-- Get the robot description. The second line in command just sets a flag
-		 which is used in accessories.urdf.xacro. The third calls xacro to load
-		 the description into the parameter. -->
-	<param name="/$(arg ns)/robot_description"
+  <!-- Namespace must be unique. -->
+  <arg name="ns" default="jackal"/>
+  <arg name="config" default="base" />
+  <arg name="tagged" default="false"/>
+  <arg name="tag_num" default="0"/>
+
+  <!-- Get the robot description. The second line in command just sets a flag
+     which is used in accessories.urdf.xacro. The third calls xacro to load
+     the description into the parameter. -->
+  <param name="/$(arg ns)/robot_description"
          command="$(find multi_jackal_description)/scripts/env_run
                   $(find multi_jackal_description)/urdf/configs/$(arg config)
                   $(find xacro)/xacro '$(find multi_jackal_description)/urdf/jackal.urdf.xacro' 
                       '--inorder' 'namespace:=$(arg ns)' 'tagged:=$(arg tagged)' 'tag_num:=$(arg tag_num)'" />
 
-	<!-- Publish the robot joints. -->
-	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg ns)">
-		<param name="tf_prefix" value="$(arg ns)"/>
-		<param name="robot_description" value="/$(arg ns)/robot_description"/>
-	</node>
+  <!-- Publish the robot joints. -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg ns)">
+    <param name="tf_prefix" value="$(arg ns)"/>
+    <param name="robot_description" value="/$(arg ns)/robot_description"/>
+  </node>
 
 </launch>

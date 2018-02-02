@@ -29,9 +29,8 @@
   
   <!-- Spawn the robot. -->
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
-	  <arg name="ns"            value="$(arg ns)"/>
-	  <arg name="use_move_base" value="true"/>
+    <arg name="ns"            value="$(arg ns)"/>
+    <arg name="use_move_base" value="true"/>
   </include>
 
-  
 </launch>

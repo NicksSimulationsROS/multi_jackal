@@ -15,10 +15,10 @@ some message names. You can see the problem yourself if you spawn two and have a
 look at the topics and TF tree.
 
 # Files
-## multi_jackal_gazebo
+## multi_jackal_tutorials
 The starting point for simulating the robots. Contains launch and config files.
 Starts up a Gazebo session and launches robots using `multi_jackal_base`.
-Example: `roslaunch multi_jackal_gazebo one_jackal.launch`.
+Example: `roslaunch multi_jackal_tutorials one_jackal.launch`.
 
 ## multi_jackal_base
 Contains a single launch file that calls all other jackal components.

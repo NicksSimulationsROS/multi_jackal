@@ -4,7 +4,7 @@
      Requires the package 'sync_params'.
 
      Launch with:
-        roslaunch multi_jackal_gazebo multimaster-gazebo.launch -p 11311
+        roslaunch multi_jackal_tutorials multimaster-gazebo.launch -p 11311
       
      And run the multimaster-jackal.launch in a new tab.
 -->
@@ -23,7 +23,7 @@
     <arg name="gui"          value="false"/>
     <arg name="headless"     value="false"/>
     <arg name="paused"       value="false"/>
-    <arg name="world_name"   value="$(find multi_jackal_gazebo)/worlds/empty.world"/>
+    <arg name="world_name"   value="$(find multi_jackal_tutorials)/worlds/empty.world"/>
   </include>
   
   <!-- Synchronise parameters. -->

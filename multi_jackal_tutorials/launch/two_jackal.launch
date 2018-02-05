@@ -16,7 +16,7 @@
     <arg name="use_sim_time" value="true"/>
     <arg name="gui"          value="false"/>
     <arg name="headless"     value="true"/>	
-    <arg name="world_name"   value="$(find multi_jackal_gazebo)/worlds/empty.world"/>
+    <arg name="world_name"   value="$(find multi_jackal_tutorials)/worlds/empty.world"/>
   </include>
   
   <!-- Spawn the robots. -->
@@ -36,7 +36,7 @@
   
   <!-- View in RVIZ. -->
   <group if="$(arg gui)">
-    <include file="$(find multi_jackal_gazebo)/launch/rviz.launch">
+    <include file="$(find multi_jackal_tutorials)/launch/rviz.launch">
       <arg name="ns"  value="$(arg ns0)"/>
     </include>
   </group>

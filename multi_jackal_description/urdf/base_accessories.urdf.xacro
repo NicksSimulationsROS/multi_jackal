@@ -1,14 +1,5 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <!--
-    As you add to this URDF, please be aware that both the robot and
-    simulation include it. You must retain compatibility with all of
-    the following launch files:
-
-    jackal_viz/launch/view_model.launch
-    jackal_gazebo/launch/jackal_world.launch
-    jackal_base/launch/base.launch
-  -->
 
   <!-- Macros to generate standoffs for offset payload mounting. -->
   <xacro:include filename="accessories/standoffs.urdf.xacro" />
@@ -20,7 +11,7 @@
   <xacro:include filename="accessories/sick_lms1xx_mount.urdf.xacro" />
   <xacro:if value="$(optenv JACKAL_LASER 0)">
     <sick_lms1xx_mount prefix="$(optenv JACKAL_LASER_MOUNT front)"
-                       topic="$(optenv JACKAL_LASER_TOPIC front/scan)"/>
+                       topic="$(arg namespace)/$(optenv JACKAL_LASER_TOPIC front/scan)"/>
 
     <joint name="$(optenv JACKAL_LASER_MOUNT front)_laser_mount_joint" type="fixed">
       <origin xyz="$(optenv JACKAL_LASER_OFFSET 0 0 0)"
@@ -29,7 +20,6 @@
       <child link="$(optenv JACKAL_LASER_MOUNT front)_laser_mount" />
     </joint>
   </xacro:if>
-
 
   <!-- If enabled, generate the upgraded Navsat payload (a Novatel Smart6). -->
   <xacro:include filename="accessories/novatel_smart6.urdf.xacro" />
@@ -69,7 +59,6 @@
     </joint>
   </xacro:if>
 
-
   <!-- If enabled, generate the bumblebee2 camera payload with a tilt of 0 degrees. -->
   <xacro:include filename="accessories/camera_mount.urdf.xacro" />
   <xacro:include filename="$(find pointgrey_camera_description)/urdf/pointgrey_bumblebee2.urdf.xacro" />
@@ -92,6 +81,5 @@
       <child link="$(optenv JACKAL_BB2_MOUNT front)_camera" />
     </joint>
   </xacro:if>
-
 
 </robot>

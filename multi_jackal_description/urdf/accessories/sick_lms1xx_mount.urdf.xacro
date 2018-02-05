@@ -33,14 +33,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
   <xacro:macro name="sick_lms1xx_mount" params="prefix topic">
 
-    <sick_lms1xx frame="${prefix}_laser" topic="${topic}" />
+    <sick_lms1xx frame="${prefix}_laser" topic="${topic}" robot_namespace="$(arg namespace)" />
 
     <link name="${prefix}_laser_mount">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <!-- Origin of this mesh is the base of the bracket. -->
-          <mesh filename="package://my_jackal_description/meshes/sick-lms1xx-bracket.stl" />
+          <mesh filename="package://multi_jackal_description/meshes/sick-lms1xx-bracket.stl" />
         </geometry>
         <material name="dark_grey" />
       </visual>

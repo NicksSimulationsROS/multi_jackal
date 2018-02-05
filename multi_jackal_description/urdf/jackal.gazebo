@@ -12,7 +12,7 @@
       <updateRate>50.0</updateRate>
       <bodyName>imu_link</bodyName>
       <topicName>imu/data</topicName>
-      <frameId>$(arg namespace)/base_link</frameId> <!-- Added -->
+      <frameId>$(arg namespace)/base_link</frameId>
       <accelDrift>0.005 0.005 0.005</accelDrift>
       <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
       <rateDrift>0.005 0.005 0.005 </rateDrift>
@@ -27,7 +27,7 @@
       <robotNamespace>/$(arg namespace)</robotNamespace>
       <updateRate>40</updateRate>
       <bodyName>navsat_link</bodyName>
-      <frameId>$(arg namespace)/base_link</frameId>      <!-- Added prefix -->
+      <frameId>$(arg namespace)/base_link</frameId>    
       <topicName>navsat/fix</topicName>
       <velocityTopicName>navsat/vel</velocityTopicName>
       <referenceLatitude>49.9</referenceLatitude>

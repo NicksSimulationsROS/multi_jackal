@@ -1,30 +1,28 @@
 <?xml version="1.0"?>
+<!-- This URDF should be loaded into a ROS parameter using xacro, then loaded 
+     into Gazebo using robot state publisher.
+     Requires the arguments: $namespace, $id -->
 <robot name="jackal" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <xacro:property name="PI" value="3.1415926535897931" />
-
-  <xacro:property name="wheelbase" value="0.262" />
-  <xacro:property name="track" value="0.37559" />
-  <xacro:property name="wheel_vertical_offset" value="0.0345" />
+  <xacro:property name="PI"                        value="3.1415926535897931" />
+  <xacro:property name="wheelbase"                 value="0.262" />
+  <xacro:property name="track"                     value="0.37559" />
+  <xacro:property name="wheel_vertical_offset"     value="0.0345" />
   <xacro:property name="footprint_vertical_offset" value="-0.0655" />
-
-  <xacro:property name="wheel_radius" value="0.098" />
-  <xacro:property name="wheel_width" value="0.040" />
-
-  <xacro:property name="chassis_length" value="0.420" />
-  <xacro:property name="chassis_width" value="0.310" />
-  <xacro:property name="chassis_height" value="0.184" />
-
-  <xacro:property name="dummy_inertia" value="1e-09"/>
-
-  <xacro:property name="mount_spacing" value="0.120" />
-
-  <material name="dark_grey"><color rgba="0.2 0.2 0.2 1.0" /></material>
+  <xacro:property name="wheel_radius"              value="0.098" />
+  <xacro:property name="wheel_width"               value="0.040" />
+  <xacro:property name="chassis_length"            value="0.420" />
+  <xacro:property name="chassis_width"             value="0.310" />
+  <xacro:property name="chassis_height"            value="0.184" />
+  <xacro:property name="dummy_inertia"             value="1e-09"/>
+  <xacro:property name="mount_spacing"             value="0.120" />
+ 
+  <material name="dark_grey"><color rgba=" 0.2 0.2 0.2 1.0" /></material>
   <material name="light_grey"><color rgba="0.4 0.4 0.4 1.0" /></material>
   <material name="yellow"><color rgba="0.8 0.8 0.0 1.0" /></material>
   <material name="black"><color rgba="0.15 0.15 0.15 1.0" /></material>
 
+  <!-- The wheel template. -->
   <xacro:macro name="wheel" params="prefix *joint_pose">
-
     <link name="${prefix}_wheel_link">
       <visual>
         <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
@@ -48,18 +46,15 @@
           izz="0.0013"/>
       </inertial>
     </link>
-
     <gazebo reference="${prefix}_wheel_link">
       <material>Gazebo/DarkGrey</material>
     </gazebo>
-
     <joint name="${prefix}_wheel" type="continuous">
       <parent link="chassis_link"/>
       <child link="${prefix}_wheel_link" />
       <xacro:insert_block name="joint_pose" />
       <axis xyz="0 1 0" />
     </joint>
-
     <!-- In reality, Jackal has only two motors, one per side. However, it's more
          straightforward for Gazebo to simulate as if there's an actuator per wheel. -->
     <transmission name="${prefix}_wheel_trans">
@@ -73,6 +68,7 @@
     </transmission>
   </xacro:macro>
 
+  <!-- The joints and links. -->
   <xacro:wheel prefix="front_left">
     <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0 0" />
   </xacro:wheel>
@@ -186,24 +182,14 @@
     <child link="front_mount" />
     <origin xyz="${mount_spacing} 0 0" />
   </joint>
-  <!-- Adding AR tag. -->
-  <xacro:if value="$(arg tagged)">
-    <xacro:include filename="$(find tag_world)/models/tag_box2.urdf.xacro"/>
-  </xacro:if>
-  <!-- End adding AR tag. -->
-    
+  
   <!-- Bring in simulation data for Gazebo. -->
   <xacro:include filename="jackal.gazebo" />
 
-  <!-- Optional standard accessories, including their simulation data. The rendering
-       of these into the final description is controlled by optenv variables, which
-       default each one to off.-->
-  <xacro:include filename="accessories.urdf.xacro" />
-  <!-- Adding additional cameras. -->
-  <xacro:unless value="$(arg tagged)">
-    <xacro:include filename="jackal_extras.urdf.xacro"/>
-  </xacro:unless>
+  <!-- Optional standard accessories, as supplied by Clearpath.-->
+  <xacro:include filename="base_accessories.urdf.xacro" />
   
-  <!-- Optional custom includes. -->
-  <xacro:include filename="$(optenv JACKAL_URDF_EXTRAS empty.urdf)" />
+  <!-- Optional custom accessories. -->
+  <xacro:include filename="custom_accessories.urdf.xacro" />
+  
 </robot>

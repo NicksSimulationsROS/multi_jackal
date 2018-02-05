@@ -4,7 +4,7 @@
      Requires the package 'sync_params'.
 
      Launch with:
-        roslaunch my_jackal_gazebo multimaster-gazebo.launch -p 11311
+        roslaunch multi_jackal_gazebo multimaster-gazebo.launch -p 11311
       
      And run the multimaster-jackal.launch in a new tab.
 -->

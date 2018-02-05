@@ -3,30 +3,41 @@
 <!-- Launches Jackal Gazebo simulation in an empty world. -->
 
 <launch>
-  <arg name="tagged" default="false"/>
+  <arg name="gui"        default="false"/>
+  <arg name="ns0"        default="jackal0"/>
+  <arg name="ns1"        default="jackal1"/>
+  <arg name="config0"    default="twocams"/>
+  <arg name="config0_id" default="0"/>
+  <arg name="config1"    default="apriltags"/>
+  <arg name="config1_id" default="1"/>
 
   <!-- Start Gazebo with an empty world. -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="use_sim_time" value="true"/>
-    <arg name="debug"        value="false"/>
     <arg name="gui"          value="false"/>
-    <arg name="headless"     value="false"/>			
+    <arg name="headless"     value="true"/>	
     <arg name="world_name"   value="$(find multi_jackal_gazebo)/worlds/empty.world"/>
-    <arg name="paused"       value="false"/>
   </include>
   
   <!-- Spawn the robots. -->
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
-    <arg name="ns"            value="jackal0"/>
-    <arg name="tagged"        value="$(arg tagged)"/>
-    <arg name="tag_num"       value="0"/>
+    <arg name="ns"            value="$(arg ns0)"/>
+    <arg name="config"        value="$(arg config0)"/>
+    <arg name="config_id"     value="$(arg config0_id)"/>
     <arg name="use_move_base" value="true"/>
   </include>
   <include file="$(find multi_jackal_base)/launch/jackal_base.launch">
-    <arg name="ns"            value="jackal1"/>
-    <arg name="x"             value="1"/>
-    <arg name="tagged"        value="$(arg tagged)"/>
-    <arg name="tag_num"       value="1"/>
+    <arg name="ns"            value="$(arg ns1)"/>
+    <arg name="config"        value="$(arg config1)"/>
+    <arg name="config_id"     value="$(arg config1_id)"/>
     <arg name="use_move_base" value="true"/>
+    <arg name="x"             value="2"/>
   </include>
+  
+  <!-- View in RVIZ. -->
+  <group if="$(arg gui)">
+    <include file="$(find multi_jackal_gazebo)/launch/rviz.launch">
+      <arg name="ns"  value="$(arg ns0)"/>
+    </include>
+  </group>
 </launch>

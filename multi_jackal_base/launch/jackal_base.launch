@@ -5,19 +5,18 @@
      
 <launch>
   <!-- Arguments to set the namespace, start position. -->
-  <arg name="ns"     default="jackal0"/>			<!-- Must be unique for each robot. -->
-  <arg name="x"      default="0"/>
-  <arg name="y"      default="0"/>
-  <arg name="z"      default="0"/>
-  <arg name="roll"   default="0"/>
-  <arg name="pitch"  default="0"/>
-  <arg name="yaw"    default="0"/>
-  <arg name="config" default="base" /> 		<!-- options in description/urdf/configs-->
+  <arg name="ns"        default="jackal0"/>			<!-- Must be unique for each robot. -->
+  <arg name="x"         default="0"/>
+  <arg name="y"         default="0"/>
+  <arg name="z"         default="0"/>
+  <arg name="roll"      default="0"/>
+  <arg name="pitch"     default="0"/>
+  <arg name="yaw"       default="0"/>
+  <arg name="config"    default="base" /> 		<!-- options in description/urdf/configs-->
+  <arg name="config_id" default="0"/>
   <arg name="use_move_base"  default="false"/> <!-- Allows navigation to a location. -->
   <arg name="use_global_tf"  default="true"/>
   <arg name="use_global_ekf" default="false"/> <!-- Uses GPS instead of a static 0,0,0 TF -->
-  <arg name="tagged"  default="false"/> 
-  <arg name="tag_num" default="0"/> 
 	
   <!-- Launch the control portion of the Jackal robot. -->
   <include file="$(find multi_jackal_control)/launch/jackal_control.launch">
@@ -26,10 +25,9 @@
 
   <!-- Generate the model for gazebo and publish the robots joint states. -->
   <include file="$(find multi_jackal_description)/launch/jackal_description.launch">
-    <arg name="ns" value="$(arg ns)"/>
-    <arg name="config" value="$(arg config)"/>
-    <arg name="tagged" value="$(arg tagged)"/>
-    <arg name="tag_num" value="$(arg tag_num)"/>
+    <arg name="ns"        value="$(arg ns)"/>
+    <arg name="config"    value="$(arg config)"/>
+    <arg name="config_id" value="$(arg config_id)"/>
   </include>
 
   <!-- Start the jackal navigation. -->

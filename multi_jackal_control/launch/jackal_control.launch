@@ -7,19 +7,18 @@
   <!-- Namespace must be unique. -->
   <arg name="ns" default="jackal0"/>
 
-  <!--The diff_drive_controller publishes odometry, but uses the wrong child 
-      and parent frames, so we need to republish it. So the 
-      'jackal0/jackal_velocity_controller/odom' will become
-      'jackal0/jackal_velocity_controller/odom_fixed'. -->
-  <rosparam command="load" file="$(find multi_jackal_control)/config/jackal_control_config.yaml" ns="$(arg ns)" />
-  <node name="repub_velocity_controller" pkg="multi_jackal_control" type="repub_node" ns="$(arg ns)" output="screen">
-    <param name="namespace" value="$(arg ns)"/>
-  </node>
-
+  <!-- Load the controller parameters. Also add the namespace to the frames, this 
+       can't be done in the YAML file so we override it here. -->
+  <rosparam command="load" 
+            file="$(find multi_jackal_control)/config/jackal_control_config.yaml" 
+            ns="$(arg ns)"
+  />
+  <param name="$(arg ns)/jackal_velocity_controller/odom_frame_id" value="$(arg ns)/odom"/>
+  <param name="$(arg ns)/jackal_velocity_controller/base_frame_id" value="$(arg ns)/base_link"/>
+  
   <!-- Spawn the jackal controls. -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner"
       args="jackal_joint_publisher jackal_velocity_controller" ns="$(arg ns)">
-    <param name="frame_id" value="control_frame"/>
   </node>
         
   <!-- Create a control marker for manual control using RVIZ. -->

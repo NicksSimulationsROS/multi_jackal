@@ -9,7 +9,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="1.5707 0 1.5707" />
         <geometry>
-          <mesh filename="package://my_jackal_description/meshes/camera-bracket.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://multi_jackal_description/meshes/camera-bracket.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="dark_grey" />
       </visual>
@@ -19,7 +19,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 1.5707" />
         <geometry>
-          <mesh filename="package://my_jackal_description/meshes/camera-beam.stl" scale="0.001 0.001 0.001" />
+          <mesh filename="package://multi_jackal_description/meshes/camera-beam.stl" scale="0.001 0.001 0.001" />
         </geometry>
         <material name="dark_grey" />
       </visual>

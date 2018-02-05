@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot >
-
+  
+  <!-- Front camera. -->
   <joint name="front_camera_mount_joint" type="fixed">
     <origin xyz="0.060 0 0" rpy="0 0 0" />
     <parent link="front_mount" />
@@ -27,7 +28,8 @@
     <parent link="front_camera_pivot" />
     <child link="front_camera" />
   </joint>
-
+    
+  <!-- Rear camera. INCOMPLETE, NO IMAGE CREATED.-->
   <joint name="rear_camera_mount_joint" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="rear_mount" />

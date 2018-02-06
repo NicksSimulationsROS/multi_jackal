@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   pointgrey_camera_driver
   robot_state_publisher
+  roslaunch
   gazebo_ros
   xacro
   urdf

@@ -8,6 +8,7 @@
   <license>CCBY</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>

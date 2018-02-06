@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   hector_gazebo_plugins
   joint_state_controller
   diff_drive_controller
+  roslaunch
 )
 
 catkin_package()

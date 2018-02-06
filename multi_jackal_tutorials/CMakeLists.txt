@@ -5,9 +5,12 @@ find_package(catkin REQUIRED COMPONENTS roslaunch)
 
 catkin_package()
 
-roslaunch_add_file_check(launch)
+roslaunch_add_file_check(launch/one_jackal.launch)
+roslaunch_add_file_check(launch/two_jackal.launch)
+roslaunch_add_file_check(launch/jackal_with_gps.launch)
+roslaunch_add_file_check(launch/rviz.launch)
 
 install(
-	DIRECTORY launch
+	DIRECTORY launch rviz worlds
 	DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

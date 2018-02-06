@@ -8,6 +8,8 @@
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>gazebo_ros</build_depend>
+  <build_depend>multi_jackal_base</build_depend>
   <run_depend>gazebo_ros</run_depend>
   <run_depend>multi_jackal_base</run_depend>
 </package>

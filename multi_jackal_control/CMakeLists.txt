@@ -11,7 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
   controller_manager
   interactive_marker_twist_server
   gazebo_ros_control
-  gazebo_ros
   hector_gazebo_plugins
   joint_state_controller
   diff_drive_controller

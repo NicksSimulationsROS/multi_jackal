@@ -22,7 +22,6 @@
   <run_depend>urdf</run_depend>
   <run_depend>xacro</run_depend>
   <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>gazebo_ros</run_depend>
   <run_depend>hector_gazebo_plugins</run_depend>
   <run_depend>joint_state_controller</run_depend>
   <run_depend>diff_drive_controller</run_depend>

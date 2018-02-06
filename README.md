@@ -38,8 +38,3 @@ Make sure the file `multi_jackal_description/scripts/env_run` is executable.
 
 Example launch files can be found in `multi_jackal_gazebo/launch`. Gazebo and RVIZ 
 can be viewed with `gzclient` and `roslaunch multi_jackal_gazebo rviz.launch`.
-
-# TODO
-When using an EKF instead of a TF for map to base_link, a warning is displayed
-`Transform from jackal0/base_link to map was unavailable for the time requested.
-Using latest instead.`

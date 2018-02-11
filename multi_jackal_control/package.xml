@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>multi_jackal_control</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>Launch the control parts of a Jackal</description>
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
   <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>

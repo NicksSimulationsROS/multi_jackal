@@ -1,6 +1,6 @@
 <package>
   <name>multi_jackal_tutorials</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>Jackal simulation for Gazebo</description>
   
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>

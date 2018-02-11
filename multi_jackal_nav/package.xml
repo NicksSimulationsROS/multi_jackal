@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>multi_jackal_nav</name>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <description>Autonomous navigation for a Jackal</description>
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
   <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>

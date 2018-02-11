@@ -2,8 +2,8 @@
 Changelog for package multi_jackal_description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2018-02-12)
+------------------
 * added nav_msgs dependency
 * Contributors: Nick Sullivan
 

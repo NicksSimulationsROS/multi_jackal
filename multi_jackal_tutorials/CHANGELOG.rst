@@ -2,6 +2,11 @@
 Changelog for package multi_jackal_tutorials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fixed launch file test
+* Contributors: Nick Sullivan
+
 0.0.3 (2018-02-13)
 ------------------
 * licensing, URL's, tutorials updated

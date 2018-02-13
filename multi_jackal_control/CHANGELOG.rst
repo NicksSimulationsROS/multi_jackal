@@ -2,6 +2,9 @@
 Changelog for package multi_jackal_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.3 (2018-02-13)
 ------------------
 * licensing, URL's, tutorials updated

@@ -14,17 +14,16 @@
 
 <launch>
   <arg name="ns"        default="jackal0"/>
-  <arg name="gui"       default="false"/>
   <arg name="config"    default="base"/>
   <arg name="config_id" default="0"/>
   <arg name="world"     default="empty.world"/>
+  <arg name="gui"       default="false"/>
+  <arg name="rviz"      default="false"/>
 
-  <!-- Start Gazebo with an empty world. -->
+  <!-- Start Gazebo. -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="use_sim_time" value="true"/>
-    <arg name="debug"        value="false"/>
-    <arg name="gui"          value="false"/>
-    <arg name="headless"     value="true"/>	
+    <arg name="gui"          value="$(arg gui)"/>
     <arg name="world_name"   value="$(find multi_jackal_tutorials)/worlds/$(arg world)"/>
   </include>
   
@@ -37,10 +36,10 @@
   </include>
   
   <!-- View in RVIZ. -->
-  <group if="$(arg gui)">
-    <include file="$(find multi_jackal_tutorials)/launch/rviz.launch">
-      <arg name="ns"  value="$(arg ns)"/>
-    </include>
+  <group if="$(arg rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" ns="$(arg ns)" args="-d $(find multi_jackal_tutorials)/rviz/one_jackal.rviz" >
+      <remap from="/move_base_simple/goal" to="/$(arg ns)/move_base_simple/goal"/>
+    </node>
   </group>
 
 </launch>

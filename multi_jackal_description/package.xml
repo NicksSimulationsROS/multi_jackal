@@ -2,10 +2,12 @@
 <package>
   <name>multi_jackal_description</name>
   <version>0.0.2</version>
-  <description>Launch Jackal states and get the model</description>
+  <description>Spawns the Jackal model.</description>
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
   <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>
-  <license>CCBY</license>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/multi_jackal_description</url>
+  
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roslaunch</build_depend>
   <build_depend>gazebo_ros</build_depend>

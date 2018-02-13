@@ -1,5 +1,6 @@
 # Multi-Jackal Simulator using Gazebo ROS
 
+The ROS documentation can be found [here](http://wiki.ros.org/multi_jackal_tutorials).
 # Overview
 These packages make use of the robotic simulator Gazebo, along with the Jackal 
 robot description. Multiple Jackals are spawned and are able to be moved 
@@ -36,5 +37,5 @@ Creates the localisation and move_base nodes.
 # Running
 Make sure the file `multi_jackal_description/scripts/env_run` is executable.
 
-Example launch files can be found in `multi_jackal_gazebo/launch`. Gazebo and RVIZ 
-can be viewed with `gzclient` and `roslaunch multi_jackal_gazebo rviz.launch`.
+Example launch files can be found in `multi_jackal_tutorials/launch`. Gazebo and RVIZ 
+can be viewed with `gzclient` and `roslaunch multi_jackal_tutorials rviz.launch`.

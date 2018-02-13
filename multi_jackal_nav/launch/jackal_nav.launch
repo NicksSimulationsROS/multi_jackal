@@ -79,6 +79,28 @@
       <param name="global_costmap/robot_base_frame"   value="$(arg ns)/base_link"/>
       <param name="local_costmap/global_frame"        value="$(arg ns)/odom"/>
       <param name="local_costmap/robot_base_frame"    value="$(arg ns)/base_link"/>
+      <rosparam param="global_costmap/obstacles_layer/scan" subst_value="true">
+        {sensor_frame: $(arg ns)/front_laser,
+         data_type: LaserScan,
+         topic: front/scan,
+         marking: true,
+         clearing: true,
+         min_obstacle_height: -2.0,
+         max_obstacle_height: 2.0,
+         obstacle_range: 2.5,
+         raytrace_range: 3.0}
+      </rosparam>
+      <rosparam param="local_costmap/obstacles_layer/scan" subst_value="true">
+        {sensor_frame: $(arg ns)/front_laser,
+         data_type: LaserScan,
+         topic: front/scan,
+         marking: true,
+         clearing: true,
+         min_obstacle_height: -2.0,
+         max_obstacle_height: 2.0,
+         obstacle_range: 2.5,
+         raytrace_range: 3.0}
+      </rosparam>
       <remap from="odom"    to="odometry/filtered" />
       <remap from="cmd_vel" to="jackal_velocity_controller/cmd_vel"/>
     </node>

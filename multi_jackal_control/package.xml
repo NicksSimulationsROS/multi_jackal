@@ -2,10 +2,11 @@
 <package>
   <name>multi_jackal_control</name>
   <version>0.0.2</version>
-  <description>Launch the control parts of a Jackal</description>
+  <description>Creates the joint and velocity controllers.</description>
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
   <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>
-  <license>CCBY</license>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/multi_jackal_control</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roslaunch</build_depend>

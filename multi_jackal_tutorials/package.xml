@@ -1,12 +1,13 @@
 <package>
   <name>multi_jackal_tutorials</name>
   <version>0.0.2</version>
-  <description>Jackal simulation for Gazebo</description>
+  <description>Tutorials for multi-Jackal simulations.</description>
   
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
   <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>
   <license>BSD</license>
-
+  <url>http://ros.org/wiki/multi_jackal_tutorials</url>
+  
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roslaunch</build_depend>
   <build_depend>gazebo_ros</build_depend>

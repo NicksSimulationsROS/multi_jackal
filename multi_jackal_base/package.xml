@@ -2,10 +2,12 @@
 <package>
   <name>multi_jackal_base</name>
   <version>0.0.2</version>
-  <description>Launch a Jackal</description>
+  <description>The Jackal simulation base that combines all components.</description>
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
   <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>
   <license>BSD</license>
+  <url>http://ros.org/wiki/multi_jackal_base</url>
+  
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roslaunch</build_depend>
   <run_depend>multi_jackal_control</run_depend>

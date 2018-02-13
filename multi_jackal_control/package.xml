@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>multi_jackal_control</name>
-  <version>0.0.3</version>
+  <version>0.0.4</version>
   <description>Creates the joint and velocity controllers.</description>
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>
   <author     email="nick.dave.sullivan@gmail.com">Nick Sullivan</author>

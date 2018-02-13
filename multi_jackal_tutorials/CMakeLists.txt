@@ -7,8 +7,8 @@ catkin_package()
 
 roslaunch_add_file_check(launch/one_jackal.launch)
 roslaunch_add_file_check(launch/two_jackal.launch)
+roslaunch_add_file_check(launch/three_jackal.launch)
 roslaunch_add_file_check(launch/jackal_with_gps.launch)
-roslaunch_add_file_check(launch/rviz.launch)
 
 install(
 	DIRECTORY launch rviz worlds

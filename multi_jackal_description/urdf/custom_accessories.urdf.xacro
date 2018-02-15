@@ -22,4 +22,9 @@
     <xacro:include filename="accessories/twocams.urdf.xacro"/>
   </xacro:if>
   
+  <!-- Box with AprilTag markers on each face, lifted up slightly. -->
+  <xacro:if value="$(optenv JACKAL_APRILTAG_POLE 0)">
+    <xacro:include filename="accessories/apriltag_box_with_pole.urdf.xacro" />
+  </xacro:if>
+  
 </robot>

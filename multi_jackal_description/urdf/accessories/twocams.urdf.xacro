@@ -2,7 +2,7 @@
 <robot >
   
   <!-- Front camera. -->
-  <joint name="front_camera_mount_joint" type="fixed">
+  <!--<joint name="front_camera_mount_joint" type="fixed">
     <origin xyz="0.060 0 0" rpy="0 0 0" />
     <parent link="front_mount" />
     <child link="front_camera_mount" />
@@ -23,11 +23,10 @@
                           camera_mass="0.085" hfov="1.0471975512" fps="60" width="640" height="512"/>
 
   <joint name="front_camera_bracket_joint" type="fixed">
-    <!-- Alter tilt here or set FLEAR3_CAMERA_TILT var. Default was 0.5236. -->
     <origin xyz="0.030 0 0.008" rpy="0 $(optenv FLEA3_CAMERA_TILT 0) 0" />
     <parent link="front_camera_pivot" />
     <child link="front_camera" />
-  </joint>
+  </joint>-->
     
   <!-- Rear camera. INCOMPLETE, NO IMAGE CREATED.-->
   <joint name="rear_camera_mount_joint" type="fixed">

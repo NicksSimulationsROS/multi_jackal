@@ -2,6 +2,9 @@
 Changelog for package multi_jackal_tutorials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.4 (2018-02-13)
 ------------------
 * fixed launch file test

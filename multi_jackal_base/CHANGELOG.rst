@@ -2,6 +2,9 @@
 Changelog for package multi_jackal_base
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+
 0.0.4 (2018-02-13)
 ------------------
 

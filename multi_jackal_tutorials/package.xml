@@ -1,6 +1,6 @@
 <package>
   <name>multi_jackal_tutorials</name>
-  <version>0.0.4</version>
+  <version>0.0.5</version>
   <description>Tutorials for multi-Jackal simulations.</description>
   
   <maintainer email="nick.dave.sullivan@gmail.com">Nick Sullivan</maintainer>

@@ -25,7 +25,7 @@
   <gazebo>
     <plugin name="gps_controller" filename="libhector_gazebo_ros_gps.so">
       <robotNamespace>/$(arg namespace)</robotNamespace>
-      <updateRate>40</updateRate>
+      <updateRate>$(arg gps_rate)</updateRate>
       <bodyName>navsat_link</bodyName>
       <frameId>$(arg namespace)/base_link</frameId>    
       <topicName>navsat/fix</topicName>
@@ -34,7 +34,7 @@
       <referenceLongitude>8.9</referenceLongitude>
       <referenceHeading>0</referenceHeading>
       <referenceAltitude>0</referenceAltitude>
-      <drift>0.0001 0.0001 0.0001</drift>
+      <drift>$(arg gps_drift) $(arg gps_drift) $(arg gps_drift)</drift>
     </plugin>
   </gazebo>
 

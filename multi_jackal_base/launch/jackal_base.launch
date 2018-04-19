@@ -17,7 +17,9 @@
   <arg name="use_move_base"  default="false"/> <!-- Allows navigation to a location. -->
   <arg name="use_global_tf"  default="true"/>
   <arg name="use_global_ekf" default="false"/> <!-- Uses GPS instead of a static 0,0,0 TF -->
-	
+	<arg name="gps_rate"  default="1"/>
+  <arg name="gps_drift" default="0.0001"/>
+  
   <!-- Launch the control portion of the Jackal robot. -->
   <include file="$(find multi_jackal_control)/launch/jackal_control.launch">
     <arg name="ns" value="$(arg ns)"/>
@@ -28,6 +30,8 @@
     <arg name="ns"        value="$(arg ns)"/>
     <arg name="config"    value="$(arg config)"/>
     <arg name="config_id" value="$(arg config_id)"/>
+    <arg name="gps_rate"  value="$(arg gps_rate)"/>
+    <arg name="gps_drift" value="$(arg gps_drift)"/>
   </include>
 
   <!-- Start the jackal navigation. -->
